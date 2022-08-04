@@ -1,0 +1,1 @@
+# lean-scale-case-study

@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Red Plate",
+    "description": "Buy one, get the second half price!",
+    "code": "R01",
+    "price": 32.95
+  },
+  {
+    "id": 2,
+    "name": "Green Plate",
+    "description": "Stay tuned for the offers!",
+    "code": "G01",
+    "price": 24.95
+  },
+  {
+    "id": 3,
+    "name": "Blue Plate",
+    "description": "Stay tuned for the offers!",
+    "code": "B01",
+    "price": 7.95
+  }
+]

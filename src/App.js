@@ -13,10 +13,7 @@ const App = () => {
       newCart[cartIndex].quantity++;
       // checking offer
       if (newCart[cartIndex].code == "R01") {
-        if (
-          newCart[cartIndex].quantity > 1 &&
-          newCart[cartIndex].quantity < 3
-        ) {
+        if (newCart[cartIndex].quantity === 2) {
           newCart[cartIndex].totalPrice =
             newCart[cartIndex].price / 2 + newCart[cartIndex].totalPrice;
         } else {
@@ -43,9 +40,20 @@ const App = () => {
     const newCart = [...cart];
     const cartIndex = cart.findIndex((item) => item.code === code);
     if (newCart[cartIndex].quantity > 1) {
+      if (newCart[cartIndex].code == "R01") {
+        if (newCart[cartIndex].quantity === 2) {
+          const halfPrice = newCart[cartIndex].price / 2;
+          newCart[cartIndex].totalPrice =
+            newCart[cartIndex].totalPrice - halfPrice;
+        } else {
+          newCart[cartIndex].totalPrice =
+            newCart[cartIndex].totalPrice - newCart[cartIndex].price;
+        }
+      } else {
+        newCart[cartIndex].totalPrice =
+          newCart[cartIndex].quantity * newCart[cartIndex].price;
+      }
       newCart[cartIndex].quantity--;
-      newCart[cartIndex].totalPrice =
-        newCart[cartIndex].quantity * newCart[cartIndex].price;
     } else {
       newCart.splice(cartIndex, 1);
     }
